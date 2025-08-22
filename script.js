@@ -41,6 +41,12 @@
             generatedForm.innerHTML = '<p>Пожалуйста, выберите хотя бы одно поле для формы.</p>';
             return;
         }
+        if (inputCount.value.includes('.') || inputCount.value.includes(',') ||
+       textareaCount.value.includes('.') || textareaCount.value.includes(',') ||
+       checkboxCount.value.includes('.') || checkboxCount.value.includes(',')){
+             generatedForm.innerHTML = '<p>Пожалуйста, выберите целочисленные значения.</p>';
+            return;
+        }
 
         const formTitle = document.createElement('h3');
         formTitle.textContent = 'Ваша форма:';
